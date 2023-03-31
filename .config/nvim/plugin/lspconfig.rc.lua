@@ -81,7 +81,7 @@ for _, lsp in ipairs(servers) do
 end
 
 local clangd_capabilities = capabilities
-clangd_capabilities.offsetEncoding = { "utf-8" }
+clangd_capabilities.offsetEncoding = { "utf-16" }
 
 nvim_lsp['clangd'].setup {
   on_attach = on_attach,
