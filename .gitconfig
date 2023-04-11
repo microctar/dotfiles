@@ -1,0 +1,5 @@
+[alias]
+  hist = log --pretty=format:\"%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(bold blue)[%cn]%C(reset) %C(red)%s %C(blue)%d%C(reset)\" --graph --date=short --decorate --all
+
+[github]
+  user = "microctar"
