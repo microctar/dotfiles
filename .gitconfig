@@ -3,3 +3,6 @@
 
 [github]
   user = "microctar"
+
+[init]
+	defaultBranch = main
