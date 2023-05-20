@@ -26,6 +26,9 @@ keymap.set('', 'sk', '<C-w>k')
 keymap.set('', 'sj', '<C-w>j')
 keymap.set('', 'sl', '<C-w>l')
 
+-- Jump motions
+keymap.set('n', '<C-l>', '<C-i>')
+
 -- Resize window
 keymap.set('n', '<C-w><left>', '<C-w><')
 keymap.set('n', '<C-w><right>', '<C-w>>')
