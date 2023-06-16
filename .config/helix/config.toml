@@ -1,0 +1,14 @@
+theme = "tokyonight"
+
+[editor]
+line-number = "relative"
+cursorline = true
+
+[editor.statusline]
+left = ["mode", "total-line-numbers", "file-name", "position"]
+center = ["spinner"]
+right = ["diagnostics", "file-encoding", "file-type", "file-line-ending"]
+separator = "|"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
