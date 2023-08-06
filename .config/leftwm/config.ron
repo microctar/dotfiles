@@ -77,6 +77,8 @@
         (command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "x"),
         (command: Execute, value: "slock", modifier: ["modkey", "Control"], key: "l"),
         (command: Execute, value: "rofi -show drun", modifier: ["modkey"], key: "r"),
+        (command: Execute, value: "maim --select | xclip -selection clipboard -t image/png", modifier: [], key: "Print"),
+        (command: Execute, value: "maim | xclip -selection clipboard -t image/png", modifier: ["modkey"], key: "Print"),
         (command: MoveToLastWorkspace, value: "", modifier: ["modkey", "Shift"], key: "w"),
         (command: SwapTags, value: "", modifier: ["modkey"], key: "w"),
         (command: MoveWindowUp, value: "", modifier: ["modkey", "Shift"], key: "k"),
