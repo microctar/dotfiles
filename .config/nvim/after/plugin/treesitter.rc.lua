@@ -33,6 +33,8 @@ treesitter.setup {
     "ruby",
     "html",
     "css",
+    "tsx",
+    "typescript",
     "fish"
   },
 
