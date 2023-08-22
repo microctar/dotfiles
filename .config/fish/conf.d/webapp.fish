@@ -1,0 +1,6 @@
+alias bodhi         "chrome --proxy-server=$http_proxy"
+alias github        "bodhi --profile-directory=Default --app-id=mjoklplbddabcmpepnokjaffbmgbkkgg"
+alias youtube       "bodhi --profile-directory=Default --app-id=agimnkijcaahngcdmfeangaknmldooml"
+alias ytmusic       "bodhi --profile-directory=Default --app-id=cinhimbnkkaeohfgghhklpknlkffjgod"
+alias telegram      "bodhi --profile-directory=Default --app-id=majiogicmcnmdhhlgmkahaleckhjbmlk"
+alias dlsiteplay    "bodhi --profile-directory=Default --app-id=cpogpamhnlmmdnpoennncemiidecomnh"
