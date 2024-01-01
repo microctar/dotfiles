@@ -2,44 +2,32 @@
 [[language]]
 name = "rust"
 auto-format = true
+language-servers = ["rust-analyzer"]
 
-[language.language-server]
-command = "rust-analyzer"
-
-[language.config]
-checkOnSave = { command = "clippy" }
+[language-server.rust-analyzer.config.check]
+command = "clippy"
 
 # lsp settings for golang
 [[language]]
 name = "go"
 auto-format = true
-
-[language.language-server]
-command = "gopls"
-
-[language.formatter]
-command = "goimports"
+language-servers = ["gopls"]
+formatter = { command = "goimports" }
 
 # lsp settings for c
 [[language]]
 name = "c"
 auto-format = true
-
-[language.language-server]
-command = "clangd"
-args = ["--background-index", "--header-insertion=iwyu", "--pch-storage=memory", "--log=verbose"]
-
-[language.formatter]
-command = "clang-format"
+language-servers = ["clangd"]
+formatter = { command = "clang-format" }
 
 # lsp settings for cpp
 [[language]]
 name = "cpp"
 auto-format = true
+language-servers = ["clangd"]
+formatter = { command = "clang-format" }
 
-[language.language-server]
+[language-server.clangd]
 command = "clangd"
 args = ["--background-index", "--header-insertion=iwyu", "--pch-storage=memory", "--log=verbose"]
-
-[language.formatter]
-command = "clang-format"
