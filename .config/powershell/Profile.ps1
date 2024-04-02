@@ -72,4 +72,7 @@ Set-PSReadLineKeyHandler -Chord 'Ctrl+LeftArrow' -Function ShellBackwardWord
 
 # Alias
 Set-Alias -Name vim -Value nvim
-Set-Alias ll ls
+Set-Alias -Name ll -Value Get-ChildItem
+
+# Utilité personnelle
+. .\PersonnelAlias.ps1
