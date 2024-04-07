@@ -12,11 +12,14 @@ packer.startup(function(use)
   use 'nvim-lua/plenary.nvim'
 
   use {
+    'rcarriga/nvim-dap-ui', requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}
+  }
+
+  use {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
-    'mfussenegger/nvim-dap',
-    'rcarriga/nvim-dap-ui',
+    
     'jose-elias-alvarez/null-ls.nvim',
     'glepnir/lspsaga.nvim',
 
