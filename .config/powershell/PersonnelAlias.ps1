@@ -3,3 +3,4 @@ function Local:List-File {
 }
 
 Set-Alias -Name l -Value List-File
+Set-Alias -Name open -Value Invoke-Item
