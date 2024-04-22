@@ -37,5 +37,24 @@ function Local:Write-Base64 {
 	return [Convert]::ToBase64String($bytes)
 }
 
+function Local:Convert-Base64 {
+  	[CmdletBinding(DefaultParameterSetName = 'Text')]
+	[Alias("base64")]
+	[OutputType([String])]
+	param(	
+		[Parameter(Mandatory=$false)]
+		[switch]$Decode,
+	
+		[Parameter(Mandatory=$true, ValueFromPipeline=$true, ParameterSetName = 'Text')]
+		[string]$Text
+	)
+
+	if ($Decode) {
+		return (Read-Base64 $Text)
+	}
+
+	return (Write-Base64 $Text)
+}
+
 Set-Alias -Name l -Value List-File
 Set-Alias -Name open -Value Invoke-Item
