@@ -76,3 +76,4 @@ Set-Alias -Name ll -Value Get-ChildItem
 
 # Utilité personnelle
 . .\PersonnelAlias.ps1
+. .\Wrapper.ps1
