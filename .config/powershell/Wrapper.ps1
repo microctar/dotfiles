@@ -46,3 +46,15 @@ function Local:ConvertTo-AsciiString {
         return [System.Text.Encoding]::ASCII.GetString($FromBytes);
     }
 }
+
+function Local:ConvertTo-HexString {
+    [OutputType([String])]
+    param(
+        [Parameter(ValueFromPipeline=$true)]
+        [string]$FromString
+    )
+
+    $bytesArray = [System.Text.Encoding]::UTF8.GetBytes($FromString)
+
+    return ([System.BitConverter]::ToString($bytesArray) -replace '-','')
+}
