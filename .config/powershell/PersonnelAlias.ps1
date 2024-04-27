@@ -56,5 +56,33 @@ function Local:Convert-Base64 {
 	return (Write-Base64 $Text)
 }
 
+function Local:New-ItemUnixStyle {
+	[Alias("touch")]
+	[OutputType([System.IO.FileInfo], [System.IO.DirectoryInfo])]
+
+	param(
+		[Parameter(Mandatory=$true)]
+		[string]$FileName
+	)
+
+	$Leaf = Split-Path -Path $FileName -Leaf
+	[string]$ParentDir = Split-Path -Path $FileName -Parent
+
+	$ParentDir = if ([System.String]::IsNullOrEmpty($ParentDir)) { (Get-Location).Path } else { Resolve-Path -Path $ParentDir }
+
+	$FullPath = Join-Path -Path $ParentDir -ChildPath $Leaf
+
+	if (([System.IO.DirectoryInfo]$FullPath).Exists) {
+		return [System.IO.DirectoryInfo]$FullPath
+	}
+	
+	if (([System.IO.FileInfo]$FullPath).Exists) {
+		return [System.IO.FileInfo]$FullPath
+	}
+
+	return (New-Item -Path $ParentDir -ItemType File -Name $Leaf)
+}
+
 Set-Alias -Name l -Value List-File
 Set-Alias -Name open -Value Invoke-Item
+Set-Alias -Name wc -Value Measure-Object
