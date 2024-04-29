@@ -31,3 +31,13 @@ formatter = { command = "clang-format" }
 [language-server.clangd]
 command = "clangd"
 args = ["--background-index", "--header-insertion=iwyu", "--pch-storage=memory", "--log=verbose"]
+
+# lsp settings for python
+[[language]]
+name = "python"
+auto-format = true
+language-servers = ["pyright"]
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
