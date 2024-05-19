@@ -41,3 +41,22 @@ language-servers = ["pyright"]
 [language-server.pyright]
 command = "pyright-langserver"
 args = ["--stdio"]
+
+# lsp settings for typescript
+[[language]]
+name = "typescript"
+auto-format = true
+language-servers = ["typescript-language-server"]
+file-types = ["ts"]
+formatter = { command = "prettier", args = ["--stdin-filepath", "file.ts"] }
+
+[[language]]
+name = "tsx"
+auto-format = true
+language-servers = ["typescript-language-server"]
+file-types = ["tsx"]
+formatter = { command = "prettier", args = ["--stdin-filepath", "file.tsx"] }
+
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
