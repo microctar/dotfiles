@@ -88,11 +88,13 @@ nvim_lsp['clangd'].setup {
   capabilities = clangd_capabilities,
 }
 
-nvim_lsp['powershell_es'].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  bundle_path = os.getenv('HOME') .. '/.local/share/nvim/mason/packages/powershell-editor-services'
-}
+if vim.fn.has('linux') == 1 then
+  nvim_lsp['powershell_es'].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    bundle_path = os.getenv('HOME') .. '/.local/share/nvim/mason/packages/powershell-editor-services'
+  }
+end
 
 -- Change diagnostic symbols in the sign column (gutter)
 -- Available at:

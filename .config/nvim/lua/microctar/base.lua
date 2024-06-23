@@ -17,14 +17,11 @@ vim.opt.smartindent = true
 
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true -- \C is needed to force matching case for the whole pattern
-vim.opt.shell = 'fish' -- fish is a smart and user-friendly command line shell. official site: https://fishshell.com/
 vim.opt.cmdheight = 1
 vim.opt.showcmd = true
 vim.opt.inccommand = 'split'
 
 vim.opt.backup = true
-vim.opt.backupdir = os.getenv("HOME") .. "/nvim"
-vim.opt.backupskip = { '/tmp/*' }
 
 vim.opt.laststatus = 2 -- the last window always has a status line
 vim.opt.scrolloff = 15
