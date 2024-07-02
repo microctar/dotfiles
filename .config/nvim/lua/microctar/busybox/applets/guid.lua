@@ -36,7 +36,7 @@ function _M.new(self, guid_str)
 
   data4 = tonumber(data4p2, 16)
 
-  for offset = 3, 8 do
+  for offset = 8, 3, -1 do
     self.Data4[offset] = data4 % 0x100
     data4 = data4 / 0x100
   end
