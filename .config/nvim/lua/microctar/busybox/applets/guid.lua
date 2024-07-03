@@ -34,11 +34,19 @@ function _M.new(self, guid_str)
   self.Data4[1] = data4 / 0x100
   self.Data4[2] = data4 % 0x100
 
-  data4 = tonumber(data4p2, 16)
-
-  for offset = 8, 3, -1 do
-    self.Data4[offset] = data4 % 0x100
-    data4 = data4 / 0x100
+  data4p2h = data4p2:sub(0,4)
+  data4p2l = data4p2:sub(5,12)
+  
+  lowbytes = tonumber(data4p2l, 16)
+  for offset = 8, 5, -1 do
+    self.Data4[offset] = lowbytes % 0x100
+    lowbytes = lowbytes / 0x100
+  end
+  
+  highbytes = tonumber(data4p2h, 16)
+  for offset = 4, 3, -1 do
+    self.Data4[offset] = highbytes % 0x100
+    highbytes = highbytes / 0x100
   end
 
   return setmetatable({}, mt)
