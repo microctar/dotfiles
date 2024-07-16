@@ -10,6 +10,11 @@ local subcommands = {
       return
     end
   end,
+  get_dmi = function()
+    local dmi_info = require('microctar.busybox.applets.dmi')
+    local reception = require('microctar.utils.reception'):new({text = dmi_info})
+    reception:render()
+  end,
 }
 
 function command.command_list()

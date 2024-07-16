@@ -88,7 +88,7 @@ nvim_lsp['clangd'].setup {
   capabilities = clangd_capabilities,
 }
 
-if vim.fn.has('linux') == 1 then
+if require('microctar.utils.system').is_linux then
   nvim_lsp['powershell_es'].setup {
     on_attach = on_attach,
     capabilities = capabilities,
