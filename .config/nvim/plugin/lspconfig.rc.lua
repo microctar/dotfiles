@@ -70,7 +70,7 @@ local servers = {
   'solargraph',
   'pyright',
   'bashls',
-  'tsserver'
+  'ts_ls'
 }
 
 for _, lsp in ipairs(servers) do
