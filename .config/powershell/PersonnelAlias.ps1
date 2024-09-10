@@ -83,6 +83,13 @@ function Local:New-ItemUnixStyle {
 	return (New-Item -Path $ParentDir -ItemType File -Name $Leaf)
 }
 
+function Local:Get-DiskBriefInfo {
+	[Alias("df")]
+	param()
+	
+	Get-Disk | Select-Object -Property "DiskNumber","BusType",@{L="SectorSize"; E={"{0} bytes" -f ($_.PhysicalSectorSize)}}, @{L="Size"; E={"{0:N0} GB" -f ($_.Size / 1000 / 1000 / 1000) }}, "Model"  | Format-List
+}
+
 Set-Alias -Name l -Value List-File
 Set-Alias -Name open -Value Invoke-Item
 Set-Alias -Name wc -Value Measure-Object
