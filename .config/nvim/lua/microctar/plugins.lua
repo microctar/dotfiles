@@ -20,7 +20,7 @@ packer.startup(function(use)
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
     
-    'jose-elias-alvarez/null-ls.nvim',
+    'nvimtools/none-ls.nvim',
     'glepnir/lspsaga.nvim',
 
     'hrsh7th/cmp-nvim-lsp',
