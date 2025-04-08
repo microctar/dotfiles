@@ -1,7 +1,7 @@
 local installed, null_ls = pcall(require, "null-ls")
 
 if (not installed) then
-  print("jose-elias-alvarez/null-ls.nvim is not installed")
+  print("nvimtools/none-ls.nvim is not installed")
   return
 end
 
